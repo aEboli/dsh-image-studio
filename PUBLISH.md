@@ -57,7 +57,7 @@ npm login
 ### 然后跑脚本
 
 ```bash
-cd dsh-plugin-image-studio-dist
+cd dsh-image-studio-dist
 node publish.mjs
 ```
 
@@ -67,10 +67,10 @@ node publish.mjs
 
 ### 包名
 
-`dsh-plugin-image-studio` 在 npm 上**当前未被占用**（查过返回 E404）。
+`dsh-image-studio` 在 npm 上**当前未被占用**（查过返回 E404）。
 
 - 想用这个名字 → 直接 publish 抢占
-- 已被抢 → 改成作用域名 `@你的名字/dsh-plugin-image-studio`，需同步改：
+- 已被抢 → 改成作用域名 `@你的名字/dsh-image-studio`，需同步改：
   - `package.json` 的 `name`
   - `market/index.json` 里 `plugins[0].name`
 
@@ -79,7 +79,7 @@ node publish.mjs
 ## 方案 B：git（不占 npm 名字 / 私有仓库）
 
 ```bash
-cd dsh-plugin-image-studio
+cd dsh-image-studio
 git init && git add . && git commit -m "feat: image studio 0.2.0"
 git remote add origin https://github.com/你的用户名/你的仓库.git
 git push -u origin main
@@ -93,7 +93,7 @@ git rev-parse HEAD        # 记住这个 40 位 commit
   "type": "git",
   "url": "https://github.com/你的用户名/你的仓库",
   "commit": "<40位小写hex>",
-  "path": "dsh-plugin-image-studio"
+  "path": "dsh-image-studio"
 }
 ```
 
@@ -167,7 +167,7 @@ git rev-parse HEAD        # 记住这个 40 位 commit
 
 | 文件 | 大小 |
 |---|---|
-| `dsh-plugin-image-studio-0.2.0.tgz` | 61.6 KB |
+| `dsh-image-studio-0.2.0.tgz` | 61.6 KB |
 | `market/index.json` | 2.5 KB |
 | `market/index.git.example.json` | 2.7 KB |
 | `publish.mjs` | 5.2 KB |

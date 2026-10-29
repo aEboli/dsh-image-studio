@@ -5,7 +5,7 @@
  * 网络只走本插件 host 的 /api/image-studio.* 同源路由，API Key 不进浏览器。
  */
 window.__ModuleLoader__.load({
-  id: 'dsh-plugin-image-studio',
+  id: 'dsh-image-studio',
   factory: require => {
     const React = require('react')
     const h = React.createElement
@@ -1498,7 +1498,7 @@ window.__ModuleLoader__.load({
         }
         ctx.effect(() => {
           const style = document.createElement('style')
-          style.dataset.pluginCss = 'dsh-plugin-image-studio'
+          style.dataset.pluginCss = 'dsh-image-studio'
           style.textContent = css
           document.head.appendChild(style)
           return () => style.remove()

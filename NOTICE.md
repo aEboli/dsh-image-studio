@@ -2,7 +2,7 @@
 
 ## 本包许可
 
-dsh-plugin-image-studio 本体代码以 **MIT** 发布。
+dsh-image-studio 本体代码以 **MIT** 发布。
 
 ## 随包与不随包的第三方内容
 

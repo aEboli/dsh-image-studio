@@ -1,4 +1,4 @@
-# dsh-plugin-image-studio
+# dsh-image-studio
 
 DSH 生图工作台插件。入口在侧栏**工作区列表上方**那排图标行，点开是整页工作台；
 界面按参考截图分区（参考图 / 提示词 / 增强模式 / 参数 / 大画布 / 底部画廊）；
@@ -24,14 +24,14 @@ DSH 生图工作台插件。入口在侧栏**工作区列表上方**那排图标
 
 ```powershell
 plugin_manager install_bundle
-  target: git+https://github.com/aEboli/dsh-plugin-image-studio.git
+  target: git+https://github.com/aEboli/dsh-image-studio.git
 ```
 
 从本地 tarball 安装：
 
 ```powershell
 plugin_manager install_bundle
-  target: file:<插件目录>/dsh-plugin-image-studio-0.2.0.tgz
+  target: file:<插件目录>/dsh-image-studio-0.2.0.tgz
 ```
 
 开发调试用 link 方式：

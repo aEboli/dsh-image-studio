@@ -1,5 +1,5 @@
 {
-  "name": "dsh-plugin-image-studio",
+  "name": "dsh-image-studio",
   "version": "0.2.0",
   "type": "module",
   "description": "DSH 生图工作台：多图并发出图 + 提示词模板/字段集/增强预设，带真实进度与按批次取消。",
@@ -79,12 +79,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/aEboli/dsh-plugin-image-studio#readme",
+  "homepage": "https://github.com/aEboli/dsh-image-studio#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aEboli/dsh-plugin-image-studio.git"
+    "url": "https://github.com/aEboli/dsh-image-studio.git"
   },
   "bugs": {
-    "url": "https://github.com/aEboli/dsh-plugin-image-studio/issues"
+    "url": "https://github.com/aEboli/dsh-image-studio/issues"
   }
 }

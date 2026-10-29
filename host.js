@@ -37,7 +37,7 @@ import { generate } from './lib/provider.js';
 import { createLimiter, mapLimit } from './lib/concurrency.js';
 import { createBatchRegistry } from './lib/batch-registry.js';
 
-export const name = 'dsh-plugin-image-studio';
+export const name = 'dsh-image-studio';
 // 只 inject 一定存在的服务；storageDomain 视组合而定，用 ctx.get 惰性取。
 // subprocess 用来「打开文件夹」；视组合而定，取不到就退化成无操作并提示。
 export const inject = ['credentials', 'connection', 'tools', 'systemPrompt'];

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 一键发布 dsh-plugin-image-studio 到 npm。
+ * 一键发布 dsh-image-studio 到 npm。
  *
  * 前提：先 npm login（这一步必须你本人做，脚本代替不了认证）。
  * 用法：node publish.mjs
@@ -16,7 +16,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const here = dirname(fileURLToPath(import.meta.url))
-const root = join(here, '..', 'dsh-plugin-image-studio')
+const root = join(here, '..')
 
 /** Windows 上要用 .cmd 版本，绕开 npm.ps1 包装器的 LASTEXITCODE 问题。 */
 const NPM = process.platform === 'win32' ? 'npm.cmd' : 'npm'

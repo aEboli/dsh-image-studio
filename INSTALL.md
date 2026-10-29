@@ -1,8 +1,8 @@
-# dsh-plugin-image-studio 0.2.0 安装说明
+# dsh-image-studio 0.2.0 安装说明
 
 本目录包含一个可离线安装的插件包：
 
-    dsh-plugin-image-studio-0.2.0.tgz     (61.6 KB)
+    dsh-image-studio-0.2.0.tgz     (61.6 KB)
 
 校验（sha256）：
 
@@ -18,22 +18,22 @@
 
 在 DSH 里新开一个会话，把本 tgz 放到工作区，然后说：
 
-> 用 plugin_manager 安装 dsh-plugin-image-studio，target 指向
-> <你的路径>\dsh-plugin-image-studio-0.2.0.tgz
+> 用 plugin_manager 安装 dsh-image-studio，target 指向
+> <你的路径>\dsh-image-studio-0.2.0.tgz
 
 对应调用：
 
     plugin_manager install_bundle
-      target: file:C:\path\to\dsh-plugin-image-studio-0.2.0.tgz
+      target: file:C:\path\to\dsh-image-studio-0.2.0.tgz
 
 ## 安装方式 B：命令行
 
-    dsh plugin --profile web add file:C:\path\to\dsh-plugin-image-studio-0.2.0.tgz
+    dsh plugin --profile web add file:C:\path\to\dsh-image-studio-0.2.0.tgz
 
 ## 安装方式 C：解压后按 link 安装（开发调试用）
 
-    tar -xzf dsh-plugin-image-studio-0.2.0.tgz
-    # 得到 package/ 目录，把它重命名成 dsh-plugin-image-studio
+    tar -xzf dsh-image-studio-0.2.0.tgz
+    # 得到 package/ 目录，把它重命名成 dsh-image-studio
     plugin_manager install_bundle target: link:<该目录绝对路径>
 
 ## 装完必须重启
@@ -78,11 +78,11 @@
 
 ## 卸载
 
-    plugin_manager remove_bundle target: dsh-plugin-image-studio
+    plugin_manager remove_bundle target: dsh-image-studio
 
 或：
 
-    dsh plugin --profile web remove dsh-plugin-image-studio
+    dsh plugin --profile web remove dsh-image-studio
 
 ## 出问题怎么查
 
