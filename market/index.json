@@ -74,7 +74,7 @@
           "source": {
             "type": "git",
             "url": "https://github.com/aEboli/dsh-image-studio",
-            "commit": "b8c369ee5ff0ba707119f30d4d57947bab6f68cc"
+            "commit": "9bac73caa0138bf3294277f85b37b37a4773c88d"
           },
           "engines": {
             "dsh": ">=0.2.0"
