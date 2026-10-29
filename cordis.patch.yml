@@ -1,0 +1,5 @@
+# Bundle patch: 把 host 半边插入 profile 的 Loader 树。
+# client 半边由 package.json 的 dsh.client 自动装配，不需要第二行。
+- insert:
+    - id: image-studio
+      name: dsh-plugin-image-studio

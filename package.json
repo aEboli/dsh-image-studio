@@ -1,0 +1,90 @@
+{
+  "name": "dsh-plugin-image-studio",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "DSH 生图工作台：多图并发出图 + 提示词模板/字段集/增强预设，带真实进度与按批次取消。",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./host.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "host.js",
+    "client.js",
+    "lib",
+    "assets/builtin.json",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "NOTICE.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "export:repo-templates": "node scripts/export-repo-templates.mjs",
+    "check:syntax": "node --check host.js && node --check client.js && node --check lib/concurrency.js && node --check lib/generation.js && node --check lib/batch-registry.js"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/dsh-credentials": "*",
+    "@deepseek-ai/schemastery": "*",
+    "@deepseek-ai/dsh-client-ui-primitives": "*",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-credentials": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-primitives": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "author": "aEboli",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "image",
+    "image-generation",
+    "prompt",
+    "studio",
+    "openai"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/aEboli/dsh-plugin-image-studio#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aEboli/dsh-plugin-image-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aEboli/dsh-plugin-image-studio/issues"
+  }
+}

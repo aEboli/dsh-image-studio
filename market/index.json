@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "title": {
+    "en": "My DSH Plugins",
+    "zh-cn": "我的 DSH 插件"
+  },
+  "description": {
+    "en": "Personal DSH plugin index.",
+    "zh-cn": "自建 DSH 插件索引。"
+  },
+  "metadata": {
+    "categories": {
+      "media": {
+        "title": {
+          "en": "Media",
+          "zh-cn": "媒体"
+        }
+      }
+    },
+    "labels": {
+      "zh-first": {
+        "title": {
+          "en": "Chinese first",
+          "zh-cn": "中文优先"
+        }
+      }
+    },
+    "sortKeys": {
+      "featured": {
+        "title": {
+          "en": "Featured",
+          "zh-cn": "推荐"
+        },
+        "order": "desc"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-plugin-image-studio",
+      "title": {
+        "en": "Image Studio",
+        "zh-cn": "生图工作台"
+      },
+      "description": {
+        "en": "Concurrent image generation with prompt templates, real progress and per-batch cancel.",
+        "zh-cn": "多图并发出图，带提示词模板、真实进度与按批次取消。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSJub25lIj4KICA8cmVjdCB4PSIyLjUiIHk9IjQiIHdpZHRoPSIxOSIgaGVpZ2h0PSIxMy41IiByeD0iMi4yIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiLz4KICA8Y2lyY2xlIGN4PSI3LjYiIGN5PSI4LjYiIHI9IjEuNSIgZmlsbD0iY3VycmVudENvbG9yIi8+CiAgPHBhdGggZD0iTTMuNCAxNS4yIEw5LjIgMTAgTDEzLjYgMTMuOSBMMTcgMTEuMiBMMjAuNiAxNC40IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxwYXRoIGQ9Ik02IDIwLjQgSDE4IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K",
+      "author": "aEboli",
+      "homepage": "https://github.com/aEboli/dsh-plugin-image-studio",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/aEboli/dsh-plugin-image-studio"
+      },
+      "metadata": {
+        "category": "media",
+        "labels": [
+          "zh-first"
+        ],
+        "keywords": [
+          "image",
+          "prompt",
+          "studio"
+        ],
+        "sortKeys": {
+          "featured": 10
+        }
+      },
+      "versions": [
+        {
+          "version": "0.2.0",
+          "publishTimestamp": 1793248008,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/aEboli/dsh-plugin-image-studio",
+            "commit": "PENDING_COMMIT_SHA"
+          },
+          "engines": {
+            "dsh": ">=0.2.0"
+          }
+        }
+      ]
+    }
+  ]
+}

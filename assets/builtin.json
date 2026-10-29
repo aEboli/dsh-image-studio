@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "enhancers": [
+    {
+      "id": "quality",
+      "name": "画质增强（原版）",
+      "text": "Quality only; original prompt and references take priority. 8K ultra-HD look, clear subject, precise focus, natural edges, style-faithful detail, smooth gradients, clean tonal separation. Reduce unintended blur, aliasing, banding, compression artifacts, oversharpening, repeated details. Preserve subject, identity, count, composition, proportions, text, style, color, lighting, materials, intentional blur/grain/pixel art/minimalism. Add no objects, details or quality labels. Size follows settings."
+    },
+    {
+      "id": "realistic",
+      "name": "写实摄影",
+      "text": "Photographic realism; original prompt and references take priority. True-to-life skin and material texture, precise focus on the subject, natural lens falloff, believable highlights and shadows, balanced contrast, clean gradients and grain that matches the medium. Remove unintended blur, aliasing, banding and compression artifacts. Keep identity, count, composition, colors, lighting direction and existing text unchanged. Add no objects and no quality labels. Size follows settings."
+    },
+    {
+      "id": "illustration",
+      "name": "插画 / 二次元",
+      "text": "Illustration finish; original prompt and references take priority. Crisp line work, clean flat or softly shaded color blocks, deliberate edge control, tidy highlights and consistent shape language. Remove muddy gradients, stray textures and compression noise. Keep character identity, silhouette, palette, composition and existing lettering unchanged. Add no objects and no quality labels. Size follows settings."
+    },
+    {
+      "id": "poster",
+      "name": "海报 / 版式",
+      "text": "Poster-grade composition; original prompt and references take priority. Clear focal hierarchy, generous safe margins for typography, deliberate negative space, edge-to-edge color discipline and clean vector-like separation between elements. Remove stray halos, unintended blur and compression banding. Preserve subject, count, layout, palette and any existing text exactly. Add no objects and no extra lettering. Size follows settings."
+    }
+  ],
+  "fieldsets": [
+    {
+      "id": "portrait-cn",
+      "name": "人像 / 美妆（截图同款）",
+      "description": "按截图提示词里的中文标签行拆分；空值自动跳过。",
+      "fields": [
+        { "key": "theme", "label": "主题风格", "type": "text" },
+        { "key": "identity", "label": "身份气质", "type": "text" },
+        { "key": "makeup", "label": "妆感目标", "type": "text" },
+        { "key": "face", "label": "五官方向", "type": "textarea" },
+        { "key": "hair", "label": "发型与发饰方向", "type": "text" },
+        { "key": "wardrobe", "label": "服装方向", "type": "text" },
+        { "key": "scene", "label": "场景方向", "type": "text" },
+        { "key": "lens", "label": "镜头方向", "type": "text" },
+        { "key": "ratio", "label": "画幅比例", "type": "enum", "options": ["1:1", "3:4", "4:3", "4:5", "9:16", "16:9"], "default": "9:16" },
+        { "key": "freedom", "label": "创意自由度", "type": "enum", "options": ["保守", "标准", "开放"], "default": "标准" },
+        { "key": "extra", "label": "补充要求", "type": "textarea" }
+      ]
+    },
+    {
+      "id": "cover-cn",
+      "name": "封面 / 海报（通用）",
+      "description": "仓库模板库里另一套字段，适合东方极简、KV、社媒封面。",
+      "fields": [
+        { "key": "theme", "label": "主题方向", "type": "text" },
+        { "key": "branch", "label": "风格分支", "type": "text" },
+        { "key": "subject", "label": "主体内容", "type": "textarea" },
+        { "key": "mood", "label": "情绪母题", "type": "text" },
+        { "key": "scene", "label": "场景与意象", "type": "text" },
+        { "key": "composition", "label": "构图与空间", "type": "textarea" },
+        { "key": "color", "label": "色彩控制", "type": "textarea" },
+        { "key": "light", "label": "光线与质感", "type": "text" },
+        { "key": "ratio", "label": "画幅比例", "type": "enum", "options": ["1:1", "3:4", "4:5", "9:16", "16:9", "2:3"], "default": "9:16" },
+        { "key": "extra", "label": "补充要求", "type": "textarea" }
+      ]
+    }
+  ],
+  "templates": [
+    {
+      "id": "builtin-gu-zhuang",
+      "name": "古风石榴美人（截图同款）",
+      "category": ["人像", "古风"],
+      "body": "主题风格：古风贵女高饱和美妆封面\n身份气质：高门小姐，鲜艳、华贵、端庄、娇艳\n妆感目标：石榴珍珠水光妆\n五官方向：珠圆玉润贵女脸，面部轮廓柔美，眼睛清亮有神，面中丰满，鼻唇端正精致\n发型与发饰方向：乌发圆润高髻，石榴红珠簪、层叠珍珠发链、浅金叶片小冠\n服装方向：石榴红云肩搭配珍珠白交领长裙，腰间加入墨青色织锦宽腰封\n场景方向：白玉栏杆 / 绿植庭院 / 石榴花枝 / 明亮日光\n镜头方向：大半身近景，人物微微侧身，手中持白玉团扇\n画幅比例：{argument name=\"ratio\" default=\"9:16\"}\n创意自由度：标准\n补充要求：使用石榴红、玫瑰粉和珍珠白高光完成妆面，腮红鲜活但边缘柔和，唇妆呈透明石榴果汁感；人物要华贵漂亮但不过分成熟。红、白、墨青形成鲜明层次，不允许背景继续大量使用红色。",
+      "variables": [{ "name": "ratio", "label": "画幅比例", "default": "9:16" }]
+    },
+    {
+      "id": "builtin-dongfang-qiuri",
+      "name": "东方禅意·秋日明媚封面",
+      "category": ["封面", "东方"],
+      "body": "主题方向：东方禅意极简秋日封面海报\n风格分支：女性审美明亮秋日型\n主体内容：一位古风女子缓慢经过一面明亮白墙，抬起一只手轻轻接住从树梢飘落的一片银杏叶\n情绪母题：清朗、从容、治愈、秋日明媚感\n场景与意象：奶油白墙面、金黄色银杏枝叶、少量橙红秋柿、飘落银杏叶、女子、清晰树影\n构图与空间：{argument name=\"ratio\" default=\"9:16\"} 竖版，白墙占画面约三分之二作为主要负空间，人物位于下方偏左，秋枝从右上方斜向进入，巨大树影铺展在右侧墙面\n色彩控制：奶油白作为高明度墙面与空间基底，银杏金黄用于主要秋叶，少量柿子橙红作为第二视觉点，人物服装保持浅米白与珍珠白\n光线与质感：晴朗秋日下午侧光，明亮通透，树影轮廓清晰，墙面保留细腻浅纸感\n补充要求：秋叶数量克制，枝头柿子只保留少量点睛；整体高明度、鲜活而不俗，留白处可配置东方书法标题与少量现代宋体小字",
+      "variables": [{ "name": "ratio", "label": "画幅比例", "default": "9:16" }]
+    },
+    {
+      "id": "builtin-zhengjianzhao",
+      "name": "智感职业证件照",
+      "category": ["人像", "商务"],
+      "body": "智感职业证件照，整体风格参考美式证件照，人物大小适中。使用淡淡的灰色到白色的渐变摄影背景，灯光柔和自然，突出真实肤色与层次感。画面清晰高质，面部保持对焦，皮肤质感通透气色好，头肩比要正常舒适。整体气质现代且优雅，神情放松，自然自信，眼神明亮有神。中景人像，人物大小适中，人物居中，低对比度，呈现出专业肖像摄影的精致感。适合作为商务与职业形象照。",
+      "variables": []
+    },
+    {
+      "id": "builtin-shangwu-touxiang",
+      "name": "商务个人头像",
+      "category": ["人像", "商务"],
+      "body": "生成一张可信自然的商务个人头像。人物肩部以上或半身构图，面部清晰，姿态端正但不僵硬，轻微侧身并看向镜头，穿着简洁得体的商务服装。使用干净的浅灰或米白背景和柔和侧前方光线，保留真实肤色、自然发丝与适度皮肤纹理，表情亲切自信，色彩克制，背景轻微虚化，无夸张滤镜、文字和水印，适合作为社交账号、简历和个人主页头像。",
+      "variables": []
+    },
+    {
+      "id": "builtin-baidi-zhutu",
+      "name": "电商白底主图",
+      "category": ["电商", "商品"],
+      "body": "生成一张电商产品白底主图，以主体产品为唯一视觉焦点。产品完整呈现，外形、颜色、材质和配件关系清晰，放置在画面中央并保留适度留白；背景纯白或近白，使用均匀柔和棚拍光和自然接触阴影，边缘干净锐利、细节真实，整体简洁高级。不要添加无关道具、额外物件、文字、水印或虚构品牌标识，适合作为商品首图和目录展示。",
+      "variables": []
+    },
+    {
+      "id": "builtin-shenghuo-fangshi",
+      "name": "电商生活方式图",
+      "category": ["电商", "场景"],
+      "body": "生成一张电商产品生活方式展示图。让主体产品保持外形、颜色、材质和品牌结构稳定，置于符合使用场景的真实环境中；辅助道具少而精，层次清楚，不遮挡主体，构图有视觉焦点并预留干净文案区域。使用自然柔和的光线、统一且克制的品牌色和真实材质细节，画面清晰高级，避免乱码文字、水印、过度堆叠和不相关物品，适合商品详情页或社交媒体营销。",
+      "variables": []
+    },
+    {
+      "id": "builtin-ziran-renxiang",
+      "name": "自然人像写真",
+      "category": ["人像", "生活"],
+      "body": "生成一张自然真实的人像写真。人物处于日常环境中，动作松弛自然，抓拍感而非僵硬摆拍，穿着简洁协调，人物比例舒适；使用自然光和适度景深，保留真实肤色、发丝和衣物纹理，背景环境有层次但不过分抢主体。画面色彩清透、对比度适中、细节清晰，表情自然有情绪，避免过度磨皮、夸张美颜、畸形手指、文字和水印，呈现生活方式摄影质感。",
+      "variables": []
+    },
+    {
+      "id": "builtin-shishang-chuanda",
+      "name": "时尚穿搭 Lookbook",
+      "category": ["时尚", "人像"],
+      "body": "生成一张时尚穿搭 Lookbook 摄影。完整展示人物与服装版型、面料纹理、颜色和层次，人物姿态利落自然，构图干净并给服装留出展示空间；使用简洁棚拍背景或现代城市背景，柔和但有方向性的灯光，色彩高级克制，画面清晰，服装细节保持真实。避免多余配饰、错位肢体、乱码文字和水印，呈现专业品牌目录摄影效果。",
+      "variables": []
+    },
+    {
+      "id": "builtin-meishi",
+      "name": "专业美食摄影",
+      "category": ["美食", "静物"],
+      "body": "生成一张专业美食摄影作品，主体菜品摆盘精致、食材新鲜，保持真实可食用的质感和自然色泽；采用俯拍或约 45 度视角，构图有主次，餐具与配料少量点缀且不喧宾夺主。使用柔和侧光，表现酥脆、汁水、蒸汽等细节但不过度夸张，背景整洁，色彩诱人，画面清晰高级，适合菜单、餐饮宣传和社交媒体配图，不添加文字和水印。",
+      "variables": []
+    },
+    {
+      "id": "builtin-shemei-haibao",
+      "name": "社媒营销海报",
+      "category": ["海报", "营销"],
+      "body": "生成一张适合社交媒体与活动宣传的营销视觉海报。围绕明确主题设置单一视觉主体，层级清晰，色彩和氛围统一，构图平衡，并在主体周围预留整洁、可后期排版的留白区域。采用现代商业视觉风格，画面清晰精致，避免生成长段文字、乱码、复杂 Logo 和水印，适合作为活动封面、商品推广或公众号配图。",
+      "variables": []
+    }
+  ]
+}
